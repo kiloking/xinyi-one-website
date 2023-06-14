@@ -4,7 +4,7 @@ import Modal from './Components/Modal';
 import taiwan_districts from './Components/taiwan_districts.json'
 
 function Footer() {
-  const [msgMailTitle,setMsgMailTitle] = useState('新亦建設網站的表單')
+  const [msgMailTitle,setMsgMailTitle] = useState('新亦建設八德煥新的表單')
   const [mailSent, setmailSent] = useState(false);
   const [error, setError] = useState(null);
   const [isOpen, setIsOpen] = useState(false);
@@ -71,57 +71,40 @@ function Footer() {
           {/* 表單 */}
           <div className='md:w-full mx-auto'>
             <form onSubmit={handleSubmit(onSubmit)} className="w-full mx-auto pt-5  rel" data-aos="fade-up" data-aos-duration="1500" >
-
-              <div className='w-full  my-3 '>
-                <input type="text" className="block  bg-white  w-full
+            <div className='flex flex-col '>
+              <div className='w-full  my-1 flex items-center justify-center  space-x-4 '>
+                <label htmlFor="" className='text-white w-10 text-right'>*姓名</label>
+                <input type="text" className="block  bg-white  w-44
                     px-3 py-2  " placeholder="姓名"   {...register("name", { required: true})}/>
               </div>
-              <div className='w-full  my-3 '>
-                <input type="text" className="block  bg-white  w-full 
+              <div className='w-full  my-1 flex items-center justify-center space-x-4'>
+                <label htmlFor="" className='text-white w-10 text-right'>*電話</label>
+                <input type="text" className="block  bg-white  w-44
                     px-3 py-2  " placeholder="聯絡電話"    {...register("tel", { required: true})}/>
               </div>
-              <div className='w-full my-3  '>
-                <input type="mail" className="block  bg-white   w-full
-                    px-3 py-2 " placeholder="電子信箱"   {...register("mail", { required: true})}/>
+              <div className='w-full my-1  flex items-center justify-center space-x-4'>
+                <label htmlFor="" className='text-white w-10 text-right'>Email</label>
+                <input type="mail" className="block  bg-white   w-44
+                    px-3 py-2 " placeholder="Email"   {...register("mail")}/>
               </div>
-              <div className='flex gap-3'>
-                <div className='w-full  '>
-                  <select className="block  bg-white  w-full px-3 py-2 "  {...register("main_district", { required: true})} onChange={(e)=>{
-                    handleChange(e)
-                  }}>
-                    <option defaultValue value="">居住縣市</option>
-                    {
-                      taiwan_districts.map((item,index)=>{
-                        return(
-                          <option value={item.name} key={item.name}>{item.name}</option>
-                        )
-                      })
-                    }
-                  </select>
-                </div>
-                <div className='w-full  '>
-                  <select className="block  bg-white  w-full px-3 py-2  "  {...register("sub_district", { required: true})}>
-                    <option defaultValue value="">居住地區</option>
-                    {
-                      subDistricts.map((item,index)=>{
-                        return(
-                          <option value={item.name} key={item.name+index}>{item.name}</option>
-                        )
-                      })
-                    }
-                  </select>
-                </div>
+              <div className='w-full my-1  flex items-start justify-center space-x-4'>
+                <label htmlFor="" className='text-white w-10 text-right'>留言</label>
+                <textarea name="" id=""  rows="4" className='block  bg-white   w-44
+                    px-3 py-2' {...register("message")}></textarea>
+
               </div>
+            </div>
+
 
               <input type="hidden" name="msgMailTitle" value={msgMailTitle}  {...register("msgMailTitle", { required: true})}/>
               <div className='text-[#5C2C1F] font-bold text-sm w-full mx-auto mt-4'>
                 <div className=' flex mt-2 text-xs md:text-base items-center justify-center'>
                   <input type="checkbox"  className='px-1 mr-1' id="checkit" name="checkit" defaultChecked {...register("checkit", { required: true})}/>
-                  <div className='text-white ml-2   underline-offset-2 cursor-pointer' onClick={()=>setIsOpen(true)}> <span className='underline'>個人資料聲明事項</span>，我同意通過電話或郵件方式與我聯絡</div>
+                  <div className='text-white ml-2 text-xs  underline-offset-2 cursor-pointer' onClick={()=>setIsOpen(true)}>本人已知悉，<span className=''>『個人資料蒐集聲明事項』</span></div>
                 </div>
               </div>
               <div className='flex flex-col w-full mx-auto gap-4 my-3 md:mt-8'>
-                <button className='border-white border-spacing-5 px-2 py-2  font-bold w-full    text-md tracking-wide text-[#fff]' type='submit'>送出</button>
+                <button className='border-white  border-2 px-2 py-2  font-bold w-full    text-md tracking-wide text-[#fff]' type='submit'>送出</button>
                 <button className='bg-[#fff] px-2 py-2  font-bold w-full   text-md tracking-wide text-[#223553]' type='reset'>清除</button>
               </div>
               <div>{error}  {mailSent}</div>            
