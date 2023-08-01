@@ -9,7 +9,7 @@ function Header() {
       >
         <div className=' absolute top-0 right-0 w-1/3' data-aos="fade" data-aos-duration="1500"><img src={process.env.PUBLIC_URL+'/images/header_c01.png'} alt="" /></div>
         <div className=' absolute bottom-0 left-0 w-1/3' data-aos="fade" data-aos-duration="1500" data-aos-delay="300"><img src={process.env.PUBLIC_URL+'/images/header_c02.png'} alt="" /></div>
-        <div className=' absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-2/4' >
+        <div className=' absolute top-[20%] left-1/2 -translate-x-1/2  w-2/4' >
           <img src={process.env.PUBLIC_URL+'/images/header_title.png'} alt="" className='w-full' data-aos="fade-down" data-aos-duration="1500" />
         </div>
 
