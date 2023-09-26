@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@keyframes fadeloop { 
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes oxxo{
+  from{
+      /* left:0; */
+      transform: translateX(-50px);
+  }
+  to{
+      /* left:100px; */
+      transform: translateX(50px);
+  }
+}

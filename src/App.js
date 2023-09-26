@@ -6,6 +6,7 @@ import Section01 from "./Release/Section01";
 import Section02 from "./Release/Section02";
 import Section03 from "./Release/Section03";
 import Section04 from "./Release/Section04";
+import Section05 from "./Release/Section05";
 import Footer from "./Release/Footer";
 function App() {
   useEffect(() => {
@@ -19,6 +20,7 @@ function App() {
   return (
     <div className="App ">
       <Header  />
+      <Section05 />
       <Section01 />
       <Section02 />
       <Section03 />
